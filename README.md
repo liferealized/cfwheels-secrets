@@ -1,2 +1,2 @@
 # cfwheels-secrets
-A cfwheels plugin to help you securely store your secrets.
+A cfwheels plugin to help you securely manage your secrets
