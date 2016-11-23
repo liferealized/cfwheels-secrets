@@ -29,6 +29,8 @@
 
     public void function setSecret(required string name, required any value) {
 
+      // lets see if the secret already exists in the application scope and if
+      // so don't do anything
       try {
         local.exists = get(arguments.name);
         return;
