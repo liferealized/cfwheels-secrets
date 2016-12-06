@@ -5,7 +5,7 @@
 
     public Secrets function init() {
       _install();
-      this.version = "1.4.5";
+      this.version = "1.4.5,2.0";
       return this;
     }
 
@@ -172,20 +172,7 @@
       if (fileExists(local.storeFile))
         return;
 
-      local.testValue = encrypt(
-          createUUID()
-        , arguments.key
-        , $getSecretSetting("algorithm")
-        , $getSecretSetting("encoding")
-      );
-
-      local.secContent =
-          "<cfset set(testSecret="""
-        & local.testValue
-        & """)>"
-        & local.newLine;
-
-      fileWrite(local.storeFile, local.secContent);
+      fileWrite(local.storeFile, "");
     }
 
     private void function _updateOnApplicationStart(
